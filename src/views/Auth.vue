@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
 import { auth, loginWithGoogle, logout } from '@/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import type { User } from 'firebase/auth'
@@ -30,7 +29,7 @@ const handleLogout = async () => {
 </script>
 
 <template>
-  <v-container class="d-flex flex-column align-center justify-center" style="height: 100vh">
+  <v-container class="d-flex flex-column align-center justify-center">
     <v-card class="pa-6 text-center" elevation="6" max-width="400">
       <h2 class="mb-4">Welcome</h2>
 
