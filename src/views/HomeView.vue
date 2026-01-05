@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useFirebaseAuth } from '@/composables/useFirebaseAuth'
 import { useGoogleDriveTodos } from '@/composables/useGoogleDriveTodos'
+import Button from '@/components/atoms/Button.vue'
 
 const { isLoggedIn } = useFirebaseAuth()
 const { todos, loadTodos, saveTodos, addTodo, toggleTodo, deleteTodo } = useGoogleDriveTodos()
@@ -33,8 +34,9 @@ onMounted(async () => {
 </script>
 
 <template>
+  <h1 class="">Google Drive Todo List</h1>
+  <Button>test</Button>
   <div class="max-w-md mx-auto p-4 rounded-2xl shadow">
-    <h1 class="text-xl font-bold mb-4">Google Drive Todo List</h1>
     <!-- Add Todo -->
     <div class="flex mb-4">
       <input
@@ -43,9 +45,13 @@ onMounted(async () => {
         placeholder="New todo..."
         class="flex-1 border px-2 py-1 rounded"
       />
-      <button class="ml-2 px-4 py-1 bg-green-500 text-white rounded" @click="handleAddTodo">
+      <Button
+        color="indigo-darken-3"
+        class="ml-2 px-4 py-1 text-white rounded"
+        @click="handleAddTodo"
+      >
         Add
-      </button>
+      </Button>
     </div>
 
     <!-- Todo List -->

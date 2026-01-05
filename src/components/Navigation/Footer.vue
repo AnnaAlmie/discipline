@@ -1,29 +1,18 @@
 <script setup lang="ts">
 import Auth from '@/components/Auth.vue'
 const route = useRoute()
+import Button from '@/components/atoms/Button.vue'
 </script>
 
 <template>
   <footer class="main-footer flex-center">
     <div class="wrapper flex-between">
       <RouterLink to="/" :class="{ disabled: route.name === 'home' }">
-        <v-btn variant="text" rounded>Home</v-btn>
+        <Button variant="text" rounded>Home</Button>
       </RouterLink>
       <Auth />
     </div>
   </footer>
-  <!-- <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header> -->
 </template>
 
 <style lang="scss" scoped>

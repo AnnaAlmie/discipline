@@ -2,7 +2,10 @@
 
 <template>
   <header class="main-header">
-    <div class="wrapper">header</div>
+    <div class="wrapper">
+      <div>AProgressLinear</div>
+      <div>0/10 tasks</div>
+    </div>
   </header>
 </template>
 

@@ -2,6 +2,7 @@
 import Header from './components/Navigation/Header.vue'
 import Footer from './components/Navigation/Footer.vue'
 import { useGoogleAppData } from '@/composables/useGoogleAppData'
+import Button from '@/components/atoms/Button.vue'
 
 const { save, load, loading, error } = useGoogleAppData()
 
@@ -21,8 +22,8 @@ async function loadData() {
 <template>
   <Header />
   <div class="main-wrapper wrapper">
-    <v-btn @click="saveData" :disabled="loading">Save</v-btn>
-    <v-btn @click="loadData" :disabled="loading">Load</v-btn>
+    <Button @click="saveData" :disabled="loading">Save</Button>
+    <Button @click="loadData" :disabled="loading">Load</Button>
     <p v-if="error">{{ error }}</p>
     <RouterView />
   </div>
