@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useFirebaseAuth } from '@/composables/useFirebaseAuth'
 import { useGoogleDriveTodos } from '@/composables/useGoogleDriveTodos'
 
-const { isLoggedIn, userData } = useFirebaseAuth()
+const { isLoggedIn } = useFirebaseAuth()
 const { todos, loadTodos, saveTodos, addTodo, toggleTodo, deleteTodo } = useGoogleDriveTodos()
 
 const newTodo = ref('')
@@ -27,8 +27,6 @@ async function handleDelete(id: string) {
 
 onMounted(async () => {
   if (isLoggedIn.value) {
-    console.log('isLoggedIn.value', isLoggedIn.value)
-
     await loadTodos()
   }
 })
@@ -37,7 +35,6 @@ onMounted(async () => {
 <template>
   <div class="max-w-md mx-auto p-4 rounded-2xl shadow">
     <h1 class="text-xl font-bold mb-4">Google Drive Todo List</h1>
-    {{ userData }}
     <!-- Add Todo -->
     <div class="flex mb-4">
       <input

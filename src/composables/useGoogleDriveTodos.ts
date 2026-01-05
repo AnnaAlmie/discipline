@@ -13,7 +13,6 @@ const todos = ref<Todo[]>([])
 
 export function useGoogleDriveTodos() {
   const { userData } = useFirebaseAuth()
-  console.log(userData.value, '55')
 
   const saveTodos = async () => {
     if (!userData.value?.accessToken) throw new Error('No access token')
