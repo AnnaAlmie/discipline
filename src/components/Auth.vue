@@ -9,6 +9,7 @@ onMounted(() => {
   onAuthStateChanged(auth, (u) => {
     user.value = u
   })
+  console.log(user.value)
 })
 </script>
 
